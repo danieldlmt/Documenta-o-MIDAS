@@ -1,0 +1,363 @@
+\ProvidesPackage{pgcomprt}[2011/08/30 PGCOMP RT Style v01]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  UFBA, Departamento de C. da Computação
+%%  Pacote de estilo para formatação de RTs (Relatório Técnico)
+%%
+%%  Baseado no estilo criado por Adriano Branco
+%%  para MCCs da PUC-RIO
+%%  sem ISSN
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Dependências de outros pacotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{array}
+\usepackage{boxedminipage}
+\usepackage[utf8]{inputenc}
+\usepackage[portuges,brazilian]{babel}
+\usepackage{cite}
+\usepackage{fancybox}
+\usepackage{setspace}
+\usepackage{mathpazo}  % Palatino style (Book Antiqua)
+\usepackage{sectsty}
+\usepackage[font={sf,bf,small}]{caption} % Fonte dos Labels
+\usepackage{ifthen}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Formatação do layout da página
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\oddsidemargin}{0.46cm} % Margem lateral 3cm (começa com 1 inch)
+\setlength{\textwidth}{15cm}
+\setlength{\topmargin}{-1.5cm} % Margem Superior 2,5cm (ajustado no olho!)
+\setlength{\textheight}{24.7cm} % Margem inferior = 2,5cm
+\setlength\parskip{6pt}
+\setlength\parindent{5mm}
+
+% Fonte Arial para as seções
+\sectionfont{\fontsize{14pt}{12pt}\fontfamily{phv}\selectfont} 
+\subsectionfont{\fontsize{12pt}{14pt}\fontfamily{phv}\selectfont} 
+\subsubsectionfont{\fontsize{11pt}{12pt}\fontfamily{phv}\selectfont} 
+
+% Footnote font size
+\renewcommand\footnotesize{\fontsize{9pt}{10pt}\selectfont} 
+
+% Para poder usar o footnote com '*' na folha de rosto
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Macros e Variáveis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Formatação de Layout da página - CAPA
+\newcommand{\LayoutCapa}{
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\topmargin}{-3.0cm} % Margem Superior igual modelo da capa
+\thispagestyle{empty}
+}
+
+% Formatação de Layout da página - Normal
+\newcommand{\LayoutNormal}{
+\setlength{\oddsidemargin}{0.46cm} % Margem lateral 3cm (começa com 1 inch)
+\setlength{\textwidth}{15cm}
+\setlength{\topmargin}{-1.5cm} % Margem Superior 2,5cm (ajustado no olho!)
+\setlength{\textheight}{24.7cm} % Margem inferior = 2,5cm}
+}
+
+\newcommand{\bfit}[1]{\textit{\textbf{#1}}}
+
+%%% Variáveis Gerais
+\newboolean{TextoPortugues}
+\newcommand{\TextoPortugues}[1]{\setboolean{TextoPortugues}{#1}}
+%\newcommand{\ISSNno}[1]{\newcommand{\ISSNnox}{{#1}}}
+\newcommand{\PGCOMPSeqAno}[1]{\newcommand{\PGCOMPSeqAnox}{{#1}}}
+\newcommand{\TituloCapa}[1]{\newcommand{\TituloCapax}{{#1}}}
+\newcommand{\TituloRosto}[1]{\newcommand{\TituloRostox}{{#1}}}
+\newcounter{QtdLinhasTituloCapax}
+\newcommand{\QtdLinhasTituloCapa}[1]{\setcounter{QtdLinhasTituloCapax}{#1}}
+
+%%% Infos dos Autores
+\newboolean{AutorAflag}
+\newboolean{AutorBflag}
+\newboolean{AutorCflag}
+\newcommand{\QtdAutores}[1]{
+  \setboolean{AutorAflag}{true} % Sempre existe um autor
+  \ifthenelse{#1 > 1}
+    {\setboolean{AutorBflag}{true}}{\setboolean{AutorBflag}{false}}
+  \ifthenelse{#1 > 2}
+    {\setboolean{AutorCflag}{true}}{\setboolean{AutorCflag}{false}}
+  }
+\newcommand{\AutorANome}[1]{\newcommand{\AutorANomex}{{#1}}}
+\newcommand{\AutorBNome}[1]{\newcommand{\AutorBNomex}{{#1}}}
+\newcommand{\AutorCNome}[1]{\newcommand{\AutorCNomex}{{#1}}}
+\newcommand{\AutorAemail}[1]{\newcommand{\AutorAemailx}{{#1}}}
+\newcommand{\AutorBemail}[1]{\newcommand{\AutorBemailx}{{#1}}}
+\newcommand{\AutorCemail}[1]{\newcommand{\AutorCemailx}{{#1}}}
+
+\newboolean{AutorADIflag}
+\newboolean{AutorBDIflag}
+\newboolean{AutorCDIflag}
+\newcommand{\AutorADI}[1]{\setboolean{AutorADIflag}{#1}}
+\newcommand{\AutorBDI}[1]{\setboolean{AutorBDIflag}{#1}}
+\newcommand{\AutorCDI}[1]{\setboolean{AutorCDIflag}{#1}}
+
+\newcounter{AutorInstSeq}
+\newcommand{\AutorAinst}[1]{\newcommand{\AutorAinstx}{{#1}}}
+\newcommand{\AutorBinst}[1]{\newcommand{\AutorBinstx}{{#1}}}
+\newcommand{\AutorCinst}[1]{\newcommand{\AutorCinstx}{{#1}}}
+\newcommand{\MesTexto}[1]{\newcommand{\MesTextox}{{#1}}}
+\newcommand{\AnoYYYY}[1]{\newcommand{\AnoYYYYx}{{#1}}}
+\newcommand{\Resumo}[1]{\newcommand{\Resumox}{{#1}}}
+\newcommand{\PalavrasChave}[1]{\newcommand{\PalavrasChavex}{{#1}}}
+\newcommand{\Abstract}[1]{\newcommand{\Abstractx}{{#1}}}
+\newcommand{\Keyword}[1]{\newcommand{\Keywordx}{{#1}}}
+\newcommand{\Patrocinio}[1]{\newcommand{\Patrociniox}{{#1}}}
+\newboolean{PatrocinioFlagx}
+\newcommand{\PatrocinioFlag}[1]{\setboolean{PatrocinioFlagx}{#1}}
+
+%%%%%%%%%%%%% Início CAPA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Capa}{
+\LayoutCapa
+
+% Brasao da UFBA
+% \includegraphics[width=0.25\textwidth]{LogoUFBA.eps}
+\begin{minipage}[h]{14.5cm}
+\doublespacing
+\fontfamily{phv}
+\begin{center} 
+\vspace{1.0cm}
+
+\fontsize{14}{16}\selectfont
+\textbf{UNIVERSIDADE FEDERAL DA BAHIA} \\
+\fontsize{11}{12}\selectfont
+\textbf{PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA DA COMPUTAÇÃO (PGCOMP)}
+\vspace{2cm}
+\end{center}
+\end{minipage}
+
+\bigskip
+\bigskip
+
+% Formatação do box com texto
+\setlength\fboxsep{1pt}
+\shadowbox{\fbox{\begin{minipage}[h]{14.5cm}
+\begin{center}
+\doublespacing
+\fontfamily{phv} \fontsize{14}{16} \selectfont
+%\bigskip
+%\medskip
+%ISSN \ISSNnox
+
+\bigskip
+\textbf{RELATÓRIO TÉCNICO}
+
+\bigskip
+\textbf{PGCOMP-RT-\PGCOMPSeqAnox}
+
+% Imprime o Título
+\bigskip
+\bigskip
+
+\fontsize{18}{20}\selectfont
+\textbf{\TituloCapax}
+
+% Imprime Autores
+\bigskip
+\fontsize{14}{15}\selectfont
+\textbf{\AutorANomex}
+
+\ifthenelse{\boolean{AutorBflag}}{\textbf{\AutorBNomex}}{}
+
+\ifthenelse{\boolean{AutorCflag}}{\textbf{\AutorCNomex}}{}
+
+% Ajusta o espaço vertical em função da qtd de linhas do título
+\ifthenelse{\value{QtdLinhasTituloCapax} < 4}{\bigskip\bigskip}{}
+\ifthenelse{\value{QtdLinhasTituloCapax} < 3}{\bigskip\bigskip}{}
+\ifthenelse{\value{QtdLinhasTituloCapax} < 2}{\bigskip\bigskip}{}
+
+
+\medskip
+\textbf{\MesTextox, \AnoYYYYx}\\
+\bigskip
+\bigskip
+\end{center}
+\end{minipage}}}
+
+\begin{minipage}[h]{14.5cm}
+\doublespacing
+\fontfamily{phv}
+\begin{center} 
+\vspace{1.0cm}
+
+\bigskip
+\bigskip
+
+\fontsize{12}{14}\selectfont
+\textbf{SALVADOR - BAHIA }\\
+
+\textbf{\AnoYYYYx}
+\end{center}
+\end{minipage}
+}
+%%%%%%%%%%%%% Final da CAPA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%% Comando para imprimir o Resumo em Português
+\newcommand{\GeraResumo}{
+\noindent\textbf{Resumo. } 
+\normalfont \normalsize
+\Resumox
+
+\medskip
+\noindent\textbf{Palavras-chave:}
+\normalfont \normalsize
+\PalavrasChavex
+}
+
+%%%% Comando para imprimir o Abstract em Inglês
+\newcommand{\GeraAbstract}{
+\noindent\textbf{Abstract. } 
+\normalfont \normalsize
+\Abstractx
+
+\medskip
+\noindent\textbf{Keywords:}
+\normalfont \normalsize
+\Keywordx
+}
+ 
+
+%%%%%%%%%%%%% Início Folha de Rosto %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\FolhaRosto}{
+\newpage
+% Colocando de volta a formatação da página
+\LayoutNormal
+
+%%%%%%%%%%%%% Início da folha de rosto
+\thispagestyle{empty}
+\fontfamily{phv} \fontsize{10}{12} \selectfont
+\begin{flushleft}
+\begin{tabular}{lr}
+Programa de Pós-graduação em Ciência da Computação & PGCOMP-RT-\PGCOMPSeqAnox  \\
+\end{tabular}
+\end{flushleft}
+
+\bigskip
+
+%% Título
+\begin{center}
+\fontfamily{phv} \fontsize{16}{18} \selectfont
+\textbf{\TituloRostox}
+\ifthenelse{\boolean{PatrocinioFlagx}}{\symbolfootnote[1]{\Patrociniox}}{}
+\end{center}
+\normalsize
+
+
+%%% Nome dos Autores
+\setcounter{AutorInstSeq}{0}
+\begin{center}
+\fontfamily{phv} \fontsize{12}{14} \selectfont
+\ifthenelse{\boolean{AutorAflag}}
+  {\AutorANomex \ifthenelse{\boolean{AutorADIflag}}{} 
+    {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
+\ifthenelse{\boolean{AutorBflag}}
+  {\,\,\, \AutorBNomex \ifthenelse{\boolean{AutorBDIflag}}{} 
+    {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
+\ifthenelse{\boolean{AutorCflag}}
+  {\\ \AutorCNomex \ifthenelse{\boolean{AutorCDIflag}}{} 
+    {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
+\end{center}
+
+%%% Instituição do autor
+\setcounter{AutorInstSeq}{0}
+\begin{center}
+\fontfamily{phv} \fontsize{11}{12} \selectfont
+\ifthenelse{\boolean{AutorAflag}}
+  {\ifthenelse{\boolean{AutorADIflag}}{} 
+{\stepcounter{AutorInstSeq}
+\textsuperscript{\arabic{AutorInstSeq}}\AutorAinstx}}{}
+\ifthenelse{\boolean{AutorBflag}}
+  {\ifthenelse{\boolean{AutorBDIflag}}{} 
+    {\stepcounter{AutorInstSeq}
+\\\textsuperscript{\arabic{AutorInstSeq}}\AutorBinstx}}{}
+\ifthenelse{\boolean{AutorCflag}}
+  {\ifthenelse{\boolean{AutorCDIflag}}{} 
+    {\stepcounter{AutorInstSeq}
+\\\textsuperscript{\arabic{AutorInstSeq}}\AutorCinstx}}{}
+\end{center}
+
+%%%E-MAIL
+\begin{center}
+\fontfamily{phv} \fontsize{10}{11} \selectfont
+\ifthenelse{\boolean{AutorAflag}}{\AutorAemailx}{}
+\ifthenelse{\boolean{AutorBflag}}{, \AutorBemailx}{}
+\ifthenelse{\boolean{AutorCflag}}{, \AutorCemailx}{}
+\end{center}
+
+\normalfont
+\normalsize
+
+%%% RESUMO / ABSTRACT - Imprime conforme a lingua principal
+\bigskip
+
+\ifthenelse{\boolean{TextoPortugues}}{
+  \GeraResumo
+
+  \bigskip
+  \bigskip
+
+  \GeraAbstract
+  }{
+  \GeraAbstract 
+  }
+
+
+\newpage
+\pagenumbering{roman} \setcounter{page}{2}
+
+\,\,\vspace*{17cm}
+
+\begin{flushleft}
+\fontfamily{phv} \fontsize{11}{12} \selectfont 
+\ifthenelse{\boolean{TextoPortugues}}
+{\textbf{Responsável por publicações:}}
+{\textbf{In charge of publications :}} \\
+\medskip
+Prof. Christina von Flach Garcia Chavez\\
+Programa de Pós-graduação em \\
+Ciência da Computação - PGCOMP\\ 
+Av. Ademar de Barros, s/n  - Ondina  \\
+40170-110 Salvador BA Brasil \\
+Tel. +55 71 3283-6308  Fax: +55 71 3283-6276  \\
+E-mail:  pgcomp@ufba.br\\
+Web site:  http://pgcomp.dcc.ufba.br\\
+\end{flushleft}
+
+\newpage
+\LayoutNormal
+}
+
+%%%%%%%%%%%%% Fim Folha de Rosto %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%% Início Sumário %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Sumario}[1]{
+ \setcounter{tocdepth}{#1}
+ \setlength\parskip{2pt} \fontfamily{phv} \selectfont 
+ \tableofcontents
+ \normalfont
+ \setlength\parskip{6pt}
+
+\newpage
+\LayoutNormal % força as margens do papel para o padrão de PGCOMP
+\pagenumbering{arabic} \setcounter{page}{1} % Numeração das páginas
+}
+%%%%%%%%%%%%% Fim Sumário %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
