@@ -5,42 +5,87 @@
 \usepackage[portuges,brazilian]{babel}
 \usepackage{lipsum}
 %\usepackage[dvipdfm]{hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{blindtext}
+
+% glossary
+% \usepackage{glossaries} 
+%\input{glossary}
+%\makeglossaries
 
 \begin{document}
 
 %% Preenchimento dos parâmetros do PGCOMP
 \TextoPortugues{true} % 'true' para português, 'false' para inglês 
 \PGCOMPSeqAno{100/2014}  % Número e ano(YY) da MCC
-\TituloCapa{Exemplo de utilização de um\\ Pacote de Estilo \LaTeX \ para RT PGCOMP}
-\TituloRosto{Exemplo de utilização de um\\ Pacote de Estilo \LaTeX \ para RT PGCOMP}
+\TituloCapa{Arquitetura de Software\\ e Análise de Requisitos: MIDAS 1.6}
+\TituloRosto{Relatório de Arquitetura de Software\\ e Análise de Requisitos: MIDAS 1.6}
 \MesTexto{Abril} % Mês por extenso, em português ou inglês
-\AnoYYYY{2014}   % Ano com 4 digitos
+\AnoYYYY{2017}   % Ano com 4 digitos
 \QtdLinhasTituloCapa{2} % Qtd de linhas do titulo na capa, de 1 até 4 linhas
 
-\QtdAutores{3} % Define quantidade de autores: 1, 2, ou 3
+\QtdAutores{9} % Define quantidade de autores: 1, 2, ou 3
 %%%% Dados Autor 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\AutorANome{Autor 1 (nome por extenso)}
-\AutorAemail{autor1@dcc.ufba.br}
-\AutorADI{false} % 'true' se o autor for do DI
+\AutorANome{Daniel Moreira}
+\AutorAemail{danieltimponi@ufba.br}
+\AutorADI{true} % 'true' se o autor for do DI
 \AutorAinst{ % Instituição do autor, caso não seja do DI
-Instituto de Matemática – Universidade Federal da Bahia (UFBA)}
-
+}
 %%%% Dados Autor 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\AutorBNome{Autor 2 (nome por extenso)}
+\AutorBNome{Juvenal Macêdo}
 \AutorBemail{autor2@inf.puc-rio.br}
 \AutorBDI{true} % 'true' se o autor for do DI
 \AutorBinst{ % Instituição do autor, caso não seja do DI
 }
 
 %%%% Dados Autor 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\AutorCNome{Autor 3 (nome por extenso)}
+\AutorCNome{Leila Karita}
 \AutorCemail{autor3@cma.stanford.edu}
-\AutorCDI{false} % 'true' se o autor for do DI
+\AutorCDI{true} % 'true' se o autor for do DI
 \AutorCinst{ % Instituição do autor, caso não seja do DI
-Center for Computer Research in Music and Acoustic, Stanford University, USA}
+}
+%%%% Dados Autor 4  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AutorDNome{Marco Paranhos}
+\AutorDemail{autssor3@cma.stanford.edu}
+\AutorDDI{true} % 'true' se o autor for do DI
+\AutorDinst{ % Instituição do autor, caso não seja do DI
+}
+%%%% Dados Autor 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AutorENome{Moara Brito}
+\AutorEemail{autssor3@cma.stanford.edu}
+\AutorEDI{true} % 'true' se o autor for do DI
+\AutorEinst{ % Instituição do autor, caso não seja do DI
+}
+%%%% Dados Autor 6  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AutorFNome{Neyla Fontan}
+\AutorFemail{autssor3@cma.stanford.edu}
+\AutorFDI{true} % 'true' se o autor for do DI
+\AutorFinst{ % Instituição do autor, caso não seja do DI
+}
+%%%% Dados Autor 7  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AutorGNome{Ricardo}
+\AutorGemail{autssor3@cma.stanford.edu}
+\AutorGDI{true} % 'true' se o autor for do DI
+\AutorGinst{ % Instituição do autor, caso não seja do DI
+}
+%%%% Dados Autor 8  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AutorHNome{Werther}
+\AutorHemail{autssor3@cma.stanford.edu}
+\AutorHDI{true} % 'true' se o autor for do DI
+\AutorHinst{ % Instituição do autor, caso não seja do DI
+}
+%%%% Dados Autor 8  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AutorINome{Kardorso}
+\AutorIemail{autssor3@cma.stanford.edu}
+\AutorIDI{true} % 'true' se o autor for do DI
+\AutorIinst{ % Instituição do autor, caso não seja do DI
+}
 
 
-\PatrocinioFlag{true} % 'true' para incluir nota de rodapé da folha de rosto
+\PatrocinioFlag{false} % 'true' para incluir nota de rodapé da folha de rosto
 \Patrocinio{ % Texto da nota de rodapé para patrocínio
 Trabalho patrocinado pelo Ministério de Ciência e Tecnologia da Presidência da República Federativa do Brasil 
 (e agência de fomento e o número do processo, se aplicável). (Ou em Inglês: This work has been
@@ -61,24 +106,10 @@ português, resumo em português, resumo em português, resumo em português, re
 em português, resumo em português. 
 }
 
-\PalavrasChave{ % Palavras-Chave em português
-Selecione até cinco palavras-chave que definam precisamente o con\-te\-ú\-do do
-seu trabalho.
-}
+%\PalavrasChave{ }
 
-\Abstract{ % Resumo em Inglês. Para trabalhos em Português ou Inglês
-Resumo em inglês, resumo em inglês, resumo em inglês, resumo em inglês, resumo
-em inglês, resumo em inglês, resumo em inglês, resumo em inglês, resumo em
-inglês, resumo em inglês, resumo em inglês, resumo em inglês, resumo em inglês,
-resumo em inglês, resumo em inglês, resumo em inglês, resumo em inglês, resumo
-em inglês, resumo em inglês, resumo em inglês, resumo em inglês, resumo em
-inglês, resumo em inglês, resumo em inglês, resumo em inglês, resumo em inglês,
-resumo em inglês, resumo em inglês, resumo em inglês, resumo em inglês, resumo
-em inglês,resumo em inglês. 
-}
-
-\Keyword{ % Palavras-Chaves em Inglês
-Select up to five keywords to precisely define the content of your work.}
+%\Abstract{}
+%\Keyword{}
 
 
 
@@ -87,6 +118,24 @@ Select up to five keywords to precisely define the content of your work.}
 
 % Comando para geração da Fohas de Rosto
 \FolhaRosto
+
+
+\section*{Glossário}
+\begin{description}
+\item[API] Componente e Conector
+\item[C\&C] Componente e Conector
+\item[CVS] Componente e Conector
+\item[DaaS] \textit{Data as a Service}
+\item[IaaS] \textit{Infrastructure as a Service}
+\item[JSON] \textit{Infrastructure as a Service}
+\item[PaaS]\textit{ Platform as a Service}
+\item[PHP]\textit{ Platform as a Service}
+\item[REST]\textit{ Platform as a Service}
+\item[SaaS] \textit{Software as a Service}
+\item[XML] \textit{Work breakdown structure}
+\item[WBS] \textit{Work breakdown structure}
+\end{description}
+\newpage
 
 % TABLE OF CONTENTS -  OPTIONAL
 \Sumario{3} % Gera índice com profundidade x
@@ -99,7 +148,7 @@ Select up to five keywords to precisely define the content of your work.}
 
 \section{Introdução}
 
-\lipsum
+
 
 Exemplo de citação de artigo \cite{article-full}, in-collection \cite{incollection-full},  dissertação \cite{mastersthesis-full}, booklet \cite{booklet-full}  e relatório técnico \cite{techreport-full}.
 
@@ -113,84 +162,198 @@ Exemplo de figura. Exemplo de referência à figura~\ref{fig:logo}.
 \caption{Exemplo de figura}  \label{fig:logo}
 \end{figure}
 
-\section{Exemplos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Análise de Requisitos}
 
-\subsection{Tabelas}
+Neste seção, define-se os requisitos funcionais e não funcionais, \textit{stakeholders} e atributos de qualidade do MIDAS. 
 
-Exemplo de tabela. Exemplo de referência à tabela~\ref{tab:exemplo}.
+A Tabela~\ref{tab:problema} apresenta-se informações do domínio de aplicação e as funcionalidades, serviços e restrições do sistema.  
 
-\begin{table}[htb]
+\begin{table}[h]
 \centering
-\caption{Exemplo de tabela} \label{tab:exemplo}
-\begin{tabular}{|c|c|c|} \hline
-a & b & c \\ \hline
-d & e & f \\
-\hline
-\end{tabular}
+\caption{Definição do problema} \label{tab:problema}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}|r p{10.9cm}|} \hline
+\textbf{Domínio} & Computação em nuvem.  \\ \hline
+\textbf{Problema} & Baixa interoperabilidade entre nuvens.  \\\hline
+\textbf{Consequência} & Os usuários finais buscam por conteúdos em diferentes provedores DaaS e como consequência os desenvolvedores de aplicações da camada SaaS têm trabalho extra para adaptar suas aplicações a diferentes provedores DaaS.
+  \\\hline
+\textbf{Proposta} & Introdução de um \textit{middleware} para aumentar a interoperabilidade entre as camadas SaaS e DaaS.  \\\hline
+\end{tabular*}
 \end{table}
 
-\subsubsection{Notas de rodapé}
-
-Exemplo de nota de rodapé\footnote{Esta é uma nota de rodapé}, outra
-nota\footnote{Outra nota de rodapé}.
-
-\subsubsection{Listas}
-
-Exemplo de lista sem numeração:
-\begin{itemize}
- \item Item
-  \begin{itemize}
-   \item Subitem
-   \item Subitem
-   \item Subitem
-  \end{itemize}
- \item Item
-  \begin{itemize}
-   \item Subitem
-  \end{itemize}
-\end{itemize}
 
 
-\noindent % Para não identar o parágrafo
-Exemplo de lista numerada:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\textit{Stakeholders}}
 \begin{enumerate}
- \item Item
-  \begin{enumerate}
-   \item Subitem
-   \item Subitem
-  \end{enumerate}
- \item Item
-  \begin{enumerate}
-   \item Subitem
-   \item Subitem
-   \item Subitem
-  \end{enumerate}
+\item \textbf{Usuário final}: o usuário final utiliza a aplicação da camada SaaS para acessar os dados da camada DaaS.
+\item 
+\textbf{Provedor \textit{middleware} (MIDAS)}: o \textit{middleware} é responsável por garantir a interoperabilidade na comunicação entre aplicações no camada SaaS e dados na camada DaaS. A equipe do MIDAS pode ser vista na Tabela~\ref{tab:equipe}.
+\begin{table}[h]
+\centering
+\caption{Equipe MIDAS} \label{tab:equipe}
+\begin{tabular*}{0.85\linewidth}{@{\extracolsep{\fill}}|r p{7cm}|} \hline
+\textbf{Desenvolvedores} & Edmilson Lima, Joevan Santos  \\ \hline
+\textbf{ Desenvolvedor de teste} & Marcelo Aires, Witã Rocha, Babacar Mane, Elivaldo Lozer.  \\\hline
+\textbf{Arquiteto de software} &Babacar Mane, Marcelo Aires, Elivaldo Lozer, [alunos de MAT65]
+  \\\hline
+\textbf{Analista de sistema} & Daniel Moreira, Juvenal Macedo
+  \\\hline
+  \textbf{Fornecedor de requisitos} & Elivaldo Lozer, Marcelo Aires
+  \\\hline
+  \textbf{Gerente de projeto} & Daniela Claro
+  \\\hline
+\end{tabular*}
+\end{table}
+\item \textbf{Provedor DaaS}: o modelo DaaS estabelece regras de acesso ao banco de dados em nuvens. 
+\item \textbf{Provedor SaaS}: o SaaS provê serviços de acesso a dados em nuvens ao usuário final. 
 \end{enumerate}
 
 
-\section{Seção}
-Seção.
 
-\subsection{Subseção}\label{sec:subsec2}
-Subseção.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Requisitos funcionais}
 
-\subsubsection{Sub subseção}
-Sub Subseção.
+\begin{table}[htb]
+\centering
+\caption{Requisitos funcionais} \label{tab:rf}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}|r p{13cm}|}    \hline
+\textbf{RF01} 	& \textbf{Decompor consultas}\\ \cline{2-2}
+ 				& O MIDAS deve aceitar consultas no formato SQL e MongoDB. As consultas devem ser decompostas por comandos.  \\\hline
+\textbf{RF02} 	& \textbf{Reconstruir consultas}\\ \cline{2-2}
+ 				& O MIDAS deve reconstruir a consulta decomposta de modo que ela seja compatível com as DaaSs alvo.   \\ \hline
+\textbf{RF03} 	& \textbf{Armazenar e gerenciar informações das DaaSs}\\ \cline{2-2}
+ 				& O MIDAS armazenar e gerenciar informações relevantes das DaaSs (informação de conexão, estruturação da consulta, etc.) .  \\ \hline
+ \textbf{RF04} 	& \textbf{Formatar, organizar e filtrar o resultado da consulta no DaaS}\\ \cline{2-2}
+ 				& O MIDAS deve filtrar dados irrelevantes para o SaaS, organizar os dados,  e ser capaz de retornar o resultado da consulta no formato JSON, XML e CSV.  \\ \hline
+\end{tabular*}
+\end{table}
 
-\subsubsection{Sub subseção}
-Sub Subseção.
 
-\subsection{Subseção}
-Subseção.
 
-\subsubsection{Sub subseção}
-Sub Subseção.
 
-\subsubsection{Sub subseção}
-Sub Subseção.
 
-\subsubsection{Sub subseção}
-Sub Subseção.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Requisitos não funcionais}
+
+\begin{table}[htb]
+\centering
+\caption{Requisitos não funcionais} \label{tab:rnf}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}|r p{13cm}|} \hline
+\textbf{RNF01} & \textbf{Licença}\\ \cline{2-2}
+ & Livre  \\\hline
+\textbf{RNF02} & \textbf{Linguagem de programação}\\ \cline{2-2}
+ & PHP  \\ \hline
+\textbf{RNF03} &\textbf{ Protocolo de comunicação SaaS}\\ \cline{2-2}
+ & API REST  \\ \hline
+ \textbf{RNF04} & \textbf{Protocolo de comunicação DaaS}\\ \cline{2-2}
+ & API REST  \\ \hline
+ \textbf{RNF05} & \textbf{Ferramentas (PaaS)}\\ \cline{2-2}
+ & Apache 2.0, servidor PHP 5.6   \\ \hline
+ \textbf{RNF06} & \textbf{Arquitetura multilocatário}\\ \cline{2-2}
+ & A arquitetura de rede deve possibilitar acesso de múltiplas aplicações da camada SaaS.  \\ \hline
+\end{tabular*}
+\end{table}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Atributos de qualidade}
+
+\begin{table}[htb]
+\centering
+\caption{Atributos de qualidade de software} \label{tab:aqs}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}|r p{13cm}|} \hline
+\textbf{AQ01} & \textbf{Interoperabilidade}\\ \cline{2-2}
+ & O \textit{middleware} deve ser capaz de comunicar simultaneamente com mais de um provedor de nuvem, independentemente das diferenças entre os provedores. Assim, o \textit{middleware} deve garantir a interoperabilidade sintática.  \\\hline
+\textbf{AQ02} & \textbf{Disponibilidade}\\ \cline{2-2}
+ & O \textit{middleware} deve estar sempre disponível para atender as requisições das aplicações do SaaS.  \\ \hline
+\textbf{AQ03} & \textbf{Desempenho}\\ \cline{2-2}
+ & Os usuários finais não devem perceber atrasos nas respostas devido a introdução do \textit{middleware}. 
+Monitoramento: deve-se monitorar o tempo de resposta de cada requisição para garantir a invisibilidade do \textit{middleware} durante os testes.   \\ \hline
+ \textbf{AQ04} & \textbf{Modificabilidade}\\ \cline{2-2}
+ & Gerenciador de código: o código-fonte deve ser modificado com o auxílio de um software de controle de versões. Os desenvolvedores utilizaram \textit{branches} durante a etapa de manutenção e o gerente de desenvolvimento deve aprovar as manutenções antes de subir a alteração ao repositório central. 
+Testes: toda e qualquer alteração deve passar testes manuais. 
+Acoplamento e Coesão: o sistema deve possuir baixo acoplamento e alta coesão. O objetivo é diminuir propagação de erros e dependência entre unidades. 
+Manutenção preditiva: para cada alteração no código, deve ser previsto unidades que devem ser modificadas em conjunto.  \\ \hline
+ \textbf{AQ05} & \textbf{Segurança}\\ \cline{2-2}
+ & Os dados consultados pelo \textit{middleware} são de domínio público e não requerem criptografia.  \\ \hline
+\end{tabular*}
+\end{table}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Visões arquiteturais}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Alocação}\label{sec:aloc}
+
+São representados na visão de alocação os estilos “Deployment” e “Work Assignment”. O estilo “Implementation” não pôde ser documentado porque o acesso ao código-fonte não foi autorizado.
+
+\subsubsection*{Deployment Style}
+
+O objetivo de utilizar o diagrama de implantação da UML é mapear os componentes e conectores no hardware onde o middleware é executado. O diagrama de implementação, abaixo, mostra quais são os componentes de hardware pensados na arquitetura do projeto, de que forma os componentes de software estão alocados e como essas diferentes peças se relacionam.
+
+\begin{figure}[htb]
+\centering
+   \includegraphics[width=0.95\textwidth]{deployment}
+\caption{Diagrama de deployment}  \label{fig:deployment}
+\end{figure}
+
+Como mostra a figura acima, o MIDAS, que é totalmente desenvolvido em PHP, fica hospedado em um PaaS chamado HEROKU utilizando seu serviço de hospedagem de PHP e banco de dados, apesar de não pretender utilizar este último.
+
+A versão do Heroku contratada é a “Free” que contempla a seguinte configuração de hardware:
+
+
+
+
+
+
+
+
+
+
+A Plataforma HEROKU funciona executando aplicativos do cliente em contêineres virtuais que rodam em um ambiente de tempo de execução confiável. Quando o cliente necessita de uma máquina com PHP, que é o que ocorre com o MIDAS, o Heroku "imediatamente" a fornece, sendo indiferente para o cliente, qual será o SO do servidor com PHP.
+
+Dessa forma, pelo fato de o MIDAS ser uma nuvem para aplicações, projetado para ser independente de infraestrutura, não cabe nesse projeto requisitar uma infraestrutura em específico. Se fosse determinado, por exemplo, que todo usuário deste middleware usasse o Windows com a justificativa de que o MIDAS foi feito pensando apenas neste SO, isso geraria um problema de lock-in para todos os usuários de MAC e Linux em uma solução que tenta justamente resolver esse problema.
+
+\subsubsection*{Work Assignment Style}
+
+O objetivo deste estilo é descrever o mapeamento das pessoas que compõem a equipe com as tarefas para desenvolvimento do módulo. A tabela, abaixo, mostra a organização dos elementos macro da estrutura de trabalho para desenvolver o MIDAS e respectivos executores:
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Componentes e conectores}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Módulo}
+
 
 
 %----------------------------------------------------------------------

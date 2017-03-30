@@ -25,7 +25,6 @@
 \usepackage{ifthen}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Formatação do layout da página
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -85,31 +84,81 @@
 \newboolean{AutorAflag}
 \newboolean{AutorBflag}
 \newboolean{AutorCflag}
+\newboolean{AutorDflag}
+\newboolean{AutorEflag}
+\newboolean{AutorFflag}
+\newboolean{AutorGflag}
+\newboolean{AutorHflag}
+\newboolean{AutorIflag}
 \newcommand{\QtdAutores}[1]{
   \setboolean{AutorAflag}{true} % Sempre existe um autor
   \ifthenelse{#1 > 1}
     {\setboolean{AutorBflag}{true}}{\setboolean{AutorBflag}{false}}
   \ifthenelse{#1 > 2}
     {\setboolean{AutorCflag}{true}}{\setboolean{AutorCflag}{false}}
+  \ifthenelse{#1 > 3}
+    {\setboolean{AutorDflag}{true}}{\setboolean{AutorDflag}{false}}
+  \ifthenelse{#1 > 4}
+    {\setboolean{AutorEflag}{true}}{\setboolean{AutorEflag}{false}}
+  \ifthenelse{#1 > 5}
+    {\setboolean{AutorFflag}{true}}{\setboolean{AutorFflag}{false}}
+  \ifthenelse{#1 > 6}
+    {\setboolean{AutorGflag}{true}}{\setboolean{AutorGflag}{false}}
+  \ifthenelse{#1 > 7}
+    {\setboolean{AutorHflag}{true}}{\setboolean{AutorHflag}{false}}
+  \ifthenelse{#1 > 8}
+    {\setboolean{AutorIflag}{true}}{\setboolean{AutorIflag}{false}}
   }
 \newcommand{\AutorANome}[1]{\newcommand{\AutorANomex}{{#1}}}
 \newcommand{\AutorBNome}[1]{\newcommand{\AutorBNomex}{{#1}}}
 \newcommand{\AutorCNome}[1]{\newcommand{\AutorCNomex}{{#1}}}
+\newcommand{\AutorDNome}[1]{\newcommand{\AutorDNomex}{{#1}}}
+\newcommand{\AutorENome}[1]{\newcommand{\AutorENomex}{{#1}}}
+\newcommand{\AutorFNome}[1]{\newcommand{\AutorFNomex}{{#1}}}
+\newcommand{\AutorGNome}[1]{\newcommand{\AutorGNomex}{{#1}}}
+\newcommand{\AutorHNome}[1]{\newcommand{\AutorHNomex}{{#1}}}
+\newcommand{\AutorINome}[1]{\newcommand{\AutorINomex}{{#1}}}
 \newcommand{\AutorAemail}[1]{\newcommand{\AutorAemailx}{{#1}}}
 \newcommand{\AutorBemail}[1]{\newcommand{\AutorBemailx}{{#1}}}
 \newcommand{\AutorCemail}[1]{\newcommand{\AutorCemailx}{{#1}}}
+\newcommand{\AutorDemail}[1]{\newcommand{\AutorDemailx}{{#1}}}
+\newcommand{\AutorEemail}[1]{\newcommand{\AutorEemailx}{{#1}}}
+\newcommand{\AutorFemail}[1]{\newcommand{\AutorFemailx}{{#1}}}
+\newcommand{\AutorGemail}[1]{\newcommand{\AutorGemailx}{{#1}}}
+\newcommand{\AutorHemail}[1]{\newcommand{\AutorHemailx}{{#1}}}
+\newcommand{\AutorIemail}[1]{\newcommand{\AutorIemailx}{{#1}}}
+
 
 \newboolean{AutorADIflag}
 \newboolean{AutorBDIflag}
 \newboolean{AutorCDIflag}
+\newboolean{AutorDDIflag}
+\newboolean{AutorEDIflag}
+\newboolean{AutorFDIflag}
+\newboolean{AutorGDIflag}
+\newboolean{AutorHDIflag}
+\newboolean{AutorIDIflag}
+
 \newcommand{\AutorADI}[1]{\setboolean{AutorADIflag}{#1}}
 \newcommand{\AutorBDI}[1]{\setboolean{AutorBDIflag}{#1}}
 \newcommand{\AutorCDI}[1]{\setboolean{AutorCDIflag}{#1}}
+\newcommand{\AutorDDI}[1]{\setboolean{AutorDDIflag}{#1}}
+\newcommand{\AutorEDI}[1]{\setboolean{AutorEDIflag}{#1}}
+\newcommand{\AutorFDI}[1]{\setboolean{AutorFDIflag}{#1}}
+\newcommand{\AutorGDI}[1]{\setboolean{AutorGDIflag}{#1}}
+\newcommand{\AutorHDI}[1]{\setboolean{AutorHDIflag}{#1}}
+\newcommand{\AutorIDI}[1]{\setboolean{AutorIDIflag}{#1}}
 
 \newcounter{AutorInstSeq}
 \newcommand{\AutorAinst}[1]{\newcommand{\AutorAinstx}{{#1}}}
 \newcommand{\AutorBinst}[1]{\newcommand{\AutorBinstx}{{#1}}}
 \newcommand{\AutorCinst}[1]{\newcommand{\AutorCinstx}{{#1}}}
+\newcommand{\AutorDinst}[1]{\newcommand{\AutorDinstx}{{#1}}}
+\newcommand{\AutorEinst}[1]{\newcommand{\AutorEinstx}{{#1}}}
+\newcommand{\AutorFinst}[1]{\newcommand{\AutorFinstx}{{#1}}}
+\newcommand{\AutorGinst}[1]{\newcommand{\AutorGinstx}{{#1}}}
+\newcommand{\AutorHinst}[1]{\newcommand{\AutorHinstx}{{#1}}}
+\newcommand{\AutorIinst}[1]{\newcommand{\AutorIinstx}{{#1}}}
 \newcommand{\MesTexto}[1]{\newcommand{\MesTextox}{{#1}}}
 \newcommand{\AnoYYYY}[1]{\newcommand{\AnoYYYYx}{{#1}}}
 \newcommand{\Resumo}[1]{\newcommand{\Resumox}{{#1}}}
@@ -156,8 +205,8 @@
 \bigskip
 \textbf{RELATÓRIO TÉCNICO}
 
-\bigskip
-\textbf{PGCOMP-RT-\PGCOMPSeqAnox}
+%\bigskip
+%\textbf{PGCOMP-RT-\PGCOMPSeqAnox}
 
 % Imprime o Título
 \bigskip
@@ -174,6 +223,18 @@
 \ifthenelse{\boolean{AutorBflag}}{\textbf{\AutorBNomex}}{}
 
 \ifthenelse{\boolean{AutorCflag}}{\textbf{\AutorCNomex}}{}
+
+\ifthenelse{\boolean{AutorDflag}}{\textbf{\AutorDNomex}}{}
+
+\ifthenelse{\boolean{AutorEflag}}{\textbf{\AutorENomex}}{}
+
+\ifthenelse{\boolean{AutorFflag}}{\textbf{\AutorFNomex}}{}
+
+\ifthenelse{\boolean{AutorGflag}}{\textbf{\AutorGNomex}}{}
+
+\ifthenelse{\boolean{AutorHflag}}{\textbf{\AutorHNomex}}{}
+
+\ifthenelse{\boolean{AutorIflag}}{\textbf{\AutorINomex}}{}
 
 % Ajusta o espaço vertical em função da qtd de linhas do título
 \ifthenelse{\value{QtdLinhasTituloCapax} < 4}{\bigskip\bigskip}{}
@@ -209,14 +270,14 @@
 
 %%%% Comando para imprimir o Resumo em Português
 \newcommand{\GeraResumo}{
-\noindent\textbf{Resumo. } 
+\noindent\textbf{ } 
 \normalfont \normalsize
 \Resumox
 
-\medskip
-\noindent\textbf{Palavras-chave:}
-\normalfont \normalsize
-\PalavrasChavex
+%\medskip
+%\noindent\textbf{Palavras-chave:}
+%\normalfont \normalsize
+%\PalavrasChavex
 }
 
 %%%% Comando para imprimir o Abstract em Inglês
@@ -269,7 +330,25 @@ Programa de Pós-graduação em Ciência da Computação & PGCOMP-RT-\PGCOMPSeqA
   {\,\,\, \AutorBNomex \ifthenelse{\boolean{AutorBDIflag}}{} 
     {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
 \ifthenelse{\boolean{AutorCflag}}
-  {\\ \AutorCNomex \ifthenelse{\boolean{AutorCDIflag}}{} 
+  {\,\,\, \AutorCNomex \ifthenelse{\boolean{AutorCDIflag}}{} 
+    {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
+\ifthenelse{\boolean{AutorDflag}}
+  {\,\,\, \AutorDNomex \ifthenelse{\boolean{AutorDDIflag}}{} 
+    {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
+\ifthenelse{\boolean{AutorEflag}}
+  {\,\,\, \AutorENomex \ifthenelse{\boolean{AutorEDIflag}}{} 
+    {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
+\ifthenelse{\boolean{AutorFflag}}
+  {\,\,\, \AutorFNomex \ifthenelse{\boolean{AutorFDIflag}}{} 
+    {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
+\ifthenelse{\boolean{AutorGflag}}
+  {\,\,\, \AutorGNomex \ifthenelse{\boolean{AutorGDIflag}}{} 
+    {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
+\ifthenelse{\boolean{AutorHflag}}
+  {\,\,\, \AutorHNomex \ifthenelse{\boolean{AutorHDIflag}}{} 
+    {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
+\ifthenelse{\boolean{AutorIflag}}
+  {\,\,\, \AutorINomex \ifthenelse{\boolean{AutorIDIflag}}{} 
     {\stepcounter{AutorInstSeq}\textsuperscript{\arabic{AutorInstSeq}}}}{}
 \end{center}
 
@@ -284,11 +363,39 @@ Programa de Pós-graduação em Ciência da Computação & PGCOMP-RT-\PGCOMPSeqA
 \ifthenelse{\boolean{AutorBflag}}
   {\ifthenelse{\boolean{AutorBDIflag}}{} 
     {\stepcounter{AutorInstSeq}
-\\\textsuperscript{\arabic{AutorInstSeq}}\AutorBinstx}}{}
+\textsuperscript{\arabic{AutorInstSeq}}\AutorBinstx}}{}
 \ifthenelse{\boolean{AutorCflag}}
   {\ifthenelse{\boolean{AutorCDIflag}}{} 
     {\stepcounter{AutorInstSeq}
-\\\textsuperscript{\arabic{AutorInstSeq}}\AutorCinstx}}{}
+\textsuperscript{\arabic{AutorInstSeq}}\AutorCinstx}}{}
+\ifthenelse{\boolean{AutorDflag}}
+  {\ifthenelse{\boolean{AutorDDIflag}}{} 
+    {\stepcounter{AutorInstSeq}
+\textsuperscript{\arabic{AutorInstSeq}}\AutorCinstx}}{}
+\ifthenelse{\boolean{AutorDflag}}
+  {\ifthenelse{\boolean{AutorDDIflag}}{} 
+    {\stepcounter{AutorInstSeq}
+\textsuperscript{\arabic{AutorInstSeq}}\AutorCinstx}}{}
+\ifthenelse{\boolean{AutorEflag}}
+  {\ifthenelse{\boolean{AutorEDIflag}}{} 
+    {\stepcounter{AutorInstSeq}
+\textsuperscript{\arabic{AutorInstSeq}}\AutorCinstx}}{}
+\ifthenelse{\boolean{AutorFflag}}
+  {\ifthenelse{\boolean{AutorFDIflag}}{} 
+    {\stepcounter{AutorInstSeq}
+\textsuperscript{\arabic{AutorInstSeq}}\AutorCinstx}}{}
+\ifthenelse{\boolean{AutorGflag}}
+  {\ifthenelse{\boolean{AutorGDIflag}}{} 
+    {\stepcounter{AutorInstSeq}
+\textsuperscript{\arabic{AutorInstSeq}}\AutorCinstx}}{}
+\ifthenelse{\boolean{AutorHflag}}
+  {\ifthenelse{\boolean{AutorHDIflag}}{} 
+    {\stepcounter{AutorInstSeq}
+\textsuperscript{\arabic{AutorInstSeq}}\AutorCinstx}}{}
+\ifthenelse{\boolean{AutorIflag}}
+  {\ifthenelse{\boolean{AutorIDIflag}}{} 
+    {\stepcounter{AutorInstSeq}
+\textsuperscript{\arabic{AutorInstSeq}}\AutorCinstx}}{}
 \end{center}
 
 %%%E-MAIL
@@ -297,6 +404,12 @@ Programa de Pós-graduação em Ciência da Computação & PGCOMP-RT-\PGCOMPSeqA
 \ifthenelse{\boolean{AutorAflag}}{\AutorAemailx}{}
 \ifthenelse{\boolean{AutorBflag}}{, \AutorBemailx}{}
 \ifthenelse{\boolean{AutorCflag}}{, \AutorCemailx}{}
+\ifthenelse{\boolean{AutorDflag}}{\AutorDemailx}{}
+\ifthenelse{\boolean{AutorEflag}}{, \AutorEemailx}{}
+\ifthenelse{\boolean{AutorFflag}}{, \AutorFemailx}{}
+\ifthenelse{\boolean{AutorGflag}}{\AutorGemailx}{}
+\ifthenelse{\boolean{AutorHflag}}{, \AutorHemailx}{}
+\ifthenelse{\boolean{AutorIflag}}{, \AutorIemailx}{}
 \end{center}
 
 \normalfont
@@ -311,9 +424,9 @@ Programa de Pós-graduação em Ciência da Computação & PGCOMP-RT-\PGCOMPSeqA
   \bigskip
   \bigskip
 
-  \GeraAbstract
+ % \GeraAbstract
   }{
-  \GeraAbstract 
+  %\GeraAbstract 
   }
 
 
