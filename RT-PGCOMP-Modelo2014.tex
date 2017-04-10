@@ -2,83 +2,72 @@
 \usepackage{pgcomprt}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
-% \usepackage[portuges,brazilian]{babel}
+\usepackage[brazilian,hyperpageref]{backref}
 \usepackage{lipsum}
-%\usepackage[dvipdfm]{hyperref}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{tabularx}
 \usepackage{caption}
 \usepackage{multirow}
 \usepackage{blindtext}
 \usepackage{multicol}
-
-% glossary
+\usepackage{subcaption}
 \usepackage{glossaries} 
+\usepackage[utf8]{inputenc}
 \input{glossary}
 \makeglossaries
 
+
 \begin{document}
 
-%% Preenchimento dos parâmetros do PGCOMP
 \TextoPortugues{true} % 'true' para português, 'false' para inglês 
 \PGCOMPSeqAno{100/2014}  % Número e ano(YY) da MCC
 \TituloCapa{Arquitetura de Software do Projeto MIDAS 1.6}
 \TituloRosto{Arquitetura de Software do Projeto MIDAS 1.6}
 \MesTexto{Abril} % Mês por extenso, em português ou inglês
 \AnoYYYY{2017}   % Ano com 4 digitos
-\QtdLinhasTituloCapa{2} % Qtd de linhas do titulo na capa, de 1 até 4 linhas
+\QtdLinhasTituloCapa{2} 
 
 \QtdAutores{9} % Define quantidade de autores: 1, 2, ou 3
-%%%% Dados Autor 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AutorANome{Daniel Moreira}
 \AutorAemail{danieltimponi@ufba.br}
 \AutorADI{true} % 'true' se o autor for do DI
 \AutorAinst{ % Instituição do autor, caso não seja do DI
 }
-%%%% Dados Autor 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AutorBNome{Juvenal Macêdo}
 \AutorBemail{juniormacedovc@gmail.com}
 \AutorBDI{true} % 'true' se o autor for do DI
 \AutorBinst{ % Instituição do autor, caso não seja do DI
 }
-%%%% Dados Autor 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AutorCNome{Leila Anjos}
 \AutorCemail{lkarita@gmail.com}
 \AutorCDI{true} % 'true' se o autor for do DI
 \AutorCinst{ % Instituição do autor, caso não seja do DI
 }
-%%%% Dados Autor 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AutorINome{Lucas Cardoso}
 \AutorIemail{kardoso@gmail.com}
 \AutorIDI{true} % 'true' se o autor for do DI
 \AutorIinst{ % Instituição do autor, caso não seja do DI
 }
-
-%%%% Dados Autor 4  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AutorDNome{Marco Paranhos}
 \AutorDemail{marco.paranhos1@gmail.com}
 \AutorDDI{true} % 'true' se o autor for do DI
 \AutorDinst{ % Instituição do autor, caso não seja do DI
 }
-%%%% Dados Autor 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AutorENome{Moara Brito}
 \AutorEemail{moarabritto@gmail.com}
 \AutorEDI{true} % 'true' se o autor for do DI
 \AutorEinst{ % Instituição do autor, caso não seja do DI
 }
-%%%% Dados Autor 6  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AutorFNome{Neyla Fontan}
 \AutorFemail{neylafontan@gmail.com}
 \AutorFDI{true} % 'true' se o autor for do DI
 \AutorFinst{ % Instituição do autor, caso não seja do DI
 }
-%%%% Dados Autor 7d%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AutorGNome{Ricardo Teixeira}
 \AutorGemail{ricardo.btxr@gmail.com}
 \AutorGDI{true} % 'true' se o autor for do DI
 \AutorGinst{ % Instituição do autor, caso não seja do DI
 }
-%%%% Dados Autor 8  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AutorHNome{João Werther}
 \AutorHemail{jwertherf@gmail.com}
 \AutorHDI{true} % 'true' se o autor for do DI
@@ -93,26 +82,12 @@ sponsored by the Ministério de Ciência e Tecnologia da Presidência da Repúbl
 Federativa do Brasil.
 }
 
-
 \Resumo{  % Resumo em Português. Para Trabalho em Português
-\textbf{Resumo: }Este relatório técnico foi elaborado em atendimento à tarefa definida como trabalho final da disciplina  MATE67 - Arquitetura de Software, do Programa de Pós-Graduação em Ciência da Computação da Universidade Federal da Bahia, sob orientação da professora Christina Von Flach Garcia Chavez. O documento foi produzido pela equipe de alunos que ficou responsável por estudar e documentar a arquitetura de software do projeto MIDAS, que é uma proposta de solução de \textit{middleware} para interoperabilidade entre nuvens. Este trabalho visa  propiciar aos alunos que cursaram a disciplina a oportunidade de aplicar na prática os conhecimentos teóricos adquiridos  em um \textit{case} de projeto real. Adicionalmente, o conteúdo deste documento poderá ser incorporado à tese de doutorado sobre o MIDAS como representação das decisões arquiteturais propostas pela equipe do projeto.
-
-
+\textbf{Resumo: }Este relatório técnico foi elaborado em atendimento à tarefa definida como trabalho final da disciplina  MATE67 - Arquitetura de Software, do Programa de Pós-Graduação em Ciência da Computação da Universidade Federal da Bahia, sob orientação da professora Christina Von Flach Garcia Chavez. O documento foi produzido pela equipe de alunos que ficou responsável por estudar e documentar a arquitetura de software do projeto MIDAS, que é uma proposta de solução de \textit{middleware} para interoperabilidade entre nuvens. Este trabalho visa  propiciar aos alunos que cursaram a disciplina a oportunidade de aplicar na prática os conhecimentos teóricos adquiridos  em um \textit{case} de projeto real. Adicionalmente, o conteúdo deste documento poderá ser incorporado à tese de doutorado sobre o MIDAS, como documentação da arquitetura de software  proposta para o projeto.
 }
 
-%\PalavrasChave{ }
-
-%\Abstract{}
-%\Keyword{}
-
-
-
-% Comando para geração da Capa
 \Capa
-
-% Comando para geração da Fohas de Rosto
 \FolhaRosto
-
 
 \section*{Glossário}
 \begin{description}
@@ -134,27 +109,13 @@ Federativa do Brasil.
 \end{description}
 \newpage
 
-% TABLE OF CONTENTS -  OPTIONAL
 \Sumario{3} % Gera índice com profundidade x
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                     %%
-%%          BEGIN DOCUMENT               %%
-%%                                                     %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Apresentação geral do documento}
 
-Este relatório possui como propósito documentar as etapas de Análise de Requisitos de  Software e Projeto de Arquitetura de Software do MIDAS, versão 1.6. Os processos seguidos nestas duas etapas são apresentados na Figura~\ref{fig:visaogeral}. 
-\todo{Esta figura é uma sugestão dos processos que seguimos}
-\begin{figure} [h!]
-  \centering
-    \includegraphics[width=0.9\textwidth]{visaogeral}
-  \caption{Grupos de fluxo de processos de software}
-  \label{fig:visaogeral}
-\end{figure}
+Este relatório possui como propósito documentar as etapas de Análise de Requisitos de  Software e Projeto de Arquitetura de Software do MIDAS, versão 1.6. 
 
-Na etapa de Análise de Requisitos, apresentado na Seção~\ref{sec:analise}, visou-se definir os requisitos de software funcionais e não funcionais seguindo as recomendações do padrão internacional ISO/IEC 12207~\cite{ISOIEC21207}. Os atributos de qualidade foram estabelecidos seguindo o modelo de qualidade recomendado pelo padrão internacional ISO/IEC 9126-1:2001~\cite{ISOIEC9126}. Como saída desta etapa, obteve-se os seguintes artefatos:\todo {estranho artefatos}
+Na etapa de Análise de Requisitos, apresentado na Seção~\ref{sec:analise}, visou-se definir os requisitos de software funcionais e não funcionais seguindo as recomendações do padrão internacional ISO/IEC 12207 [4]. Os atributos de qualidade foram estabelecidos seguindo o modelo de qualidade recomendado pelo padrão internacional ISO/IEC 9126-1:2001 [3]. Como saída desta etapa, obteve-se os seguintes artefatos:
 
 \begin{enumerate}
 \item Lista de \textit{stakeholders}, Subseção~\ref{subsec:stakeholders};
@@ -162,63 +123,21 @@ Na etapa de Análise de Requisitos, apresentado na Seção~\ref{sec:analise}, vi
 \item Atributos de qualidade, Subseção~\ref{subsec:aq}.
 \end{enumerate}
 
-% ISO 12207 Requisitos
-% The purpose of Software Requirements Analysis Process is to establish the requirements of the software elements of the system.
+A etapa Projeto de Arquitetura de Software, Seção~\ref{sec:pas}, tem como objetivo fornecer um modelo arquitetural para o MIDAS, que seja capaz de ser implementado e validado de acordo com os requisitos de software definidos.
+Para construção do modelo arquitetural, utilizou-se as três visões arquiteturais propostas por [1], que devem ser especializadas por um estilo arquitetural. Como resultado desta etapa, elaborou-se as visões arquiteturais do MIDAS: \textit{Module View}, \textit{Component-and-Connector View} e \textit{Allocation View}.
 
-% ISO 9126-1 Qualidade interna e externa
+O \textit{Module View} fornece a decomposição em unidades de implementação do sistema,  com isso será representado o \textit{Decomposition Style}, o \textit{Data Model Style}, o \textit{Uses Style} que ilustra a depêndencia que pode existir entre dois módulos, e o \textit{Layered Style}.
 
-% ISO12207 Arquitetura
-% The purpose of the Software Architectural Design Process is to provide a design for the software that implements and can be verified against the requirements.
+O \textit{Component-and-Connector View} expressam o comportamento de tempo de execução e neste documento é representado pelo \textit{Client-Server Style}
 
-%No sentido de capturar as várias dimensões de um projeto arquitetural, o documento é estruturado de acordo com Germoglio  \cite{germoglio2010arquitetura} e Clements et al \cite{clements2002documenting}.
+A \textit{Allocation View} descreve o mapeamento de unidades de software para elementos de um ambiente no qual o software é desenvolvido ou executado. Dessa forma, o \textit{Deployment Style} representa a implantação da aplicação no hardware, e o  \textit{Work Assignment Style} descreve o mapeamento das pessoas no desenvolvimento do MIDAS.
 
-\todo{Pt ou En?}
-A etapa Projeto de Arquitetura de Software, Seção~\ref{sec:pas}, tem como objetivo fornecer um modelo arquitetural para o MIDAS, que seja capaz de ser implementado e validado de acordo com os requisitos de software definidos. Para construção do modelo arquitetural, utilizou-se as três visões arquiteturais propostas pelo \textit{Software Engineering Institute} (SEI)~\cite{clements2002documenting}, que devem ser especializadas por um estilo arquitetural. Como resultado desta etapa, elaborou-se as visões arquiteturais do MIDAS:
-
-\begin{multicols}{2}
-\begin{enumerate}
-\item Módulo, Subseção~\ref{subsec:mv}:
-	\begin{itemize}
-	\item[-] \textit{Decomposition Style}; 
-    \item[-] \textit{Data Model Style};
-    \item[-] \textit{Uses Style};
-    \item[-] \textit{Layered Style}.
-	\end{itemize}
-\item Componente e Conector, Subseção~\ref{subsec:cc}
-	\begin{itemize}
-	\item[-] Estilo cliente-servidor.
-	\end{itemize}
-\item Alocação, Subseção~\ref{subsec:av}
-	\begin{itemize}
-	\item[-] \textit{Deployment Style}; 
-    \item[-] \textit{Work Assignment Style}.
-	\end{itemize}
-\end{enumerate}
-
-\end{multicols}
-
-%Baseado em Germoglio \cite{germoglio2010arquitetura} é apresentado os requisitos arquiteturais que são os requisitos que possui relevância para a arquitetura, os \textit{stakeholders} que são os participantes do projeto, os atributos de qualidades, e as decisões arquiteturais que são as escolhas entre as alternativas de design arquitetural.
-
-%Clements et al \cite{clements2002documenting} apresenta três \textit{view types}, e estas serão representadas neste documento. O \textit{Module View} fornece a decomposição em unidades de implementação do sistema,  com isso será representado o \textit{Decomposition Style}, o \textit{Data Model Style}, o \textit{Uses Style} que ilustra a depêndencia que pode existir entre dois módulos, e o \textit{Layered Style}.
-%O \textit{Component-and-Connector View} expressam o comportamento de tempo de execução e neste documento é representado pelo \textit{Client-Server Style}
-%A \textit{Allocation View} descreve o mapeamento de unidades de software para elementos de um ambiente no qual o software é desenvolvido ou executado. Dessa forma, o \textit{Deployment Style} representa a implantação da aplicação no hardware, e o  \textit{Work Assignment Style} descreve o mapeamento das pessoas no desenvolvimento do MIDAS.
-
-%Não fez parte do escopo deste trabalho alterar ou interferir em  decisões arquiteturais do projeto. O trabalho da equipe restringiu-se a documentar as decisões arquiteturais da versão 1.6 previamente estabelecidas pela equipe que participa do MIDAS.   
-
-
-
-
+Não fez parte do escopo deste trabalho alterar ou interferir em  decisões arquiteturais do projeto. O trabalho da equipe restringiu-se a documentar as decisões arquiteturais da versão 1.6 previamente estabelecidas pela equipe que participa do MIDAS.   
 
 \newpage
-
 \section{Finalidade do sistema}
 
-O MIDAS visa atender a interoperabilidade de serviços entre nuvens, onde tem por objetivo estabelecer uma comunicação transparente entre aplicações do tipo \textit{Software as a Service }(SaaS) e dados de quaisquer provedores de Dado como Serviço (DaaS), de forma que as aplicações possam trabalhar com conjuntos de dados de serviços DaaS de qualquer fonte. O MIDAS converte a consulta original para uma requisição DaaS adequada e a envia para o provedor do serviço. O resultado obtido é então formatado de acordo com a resposta esperada pela aplicação \cite{marinho2016midas}.
-
-O  projeto MIDAS é conduzido pelo Departamento de Ciência da Computação da Universidade Federal da Bahia sob orientação da professora Daniela Claro e conta com a participação de alunos de doutorado, mestrado e graduação da universidade.
-
-\todo[inline]{adicionar ao texto}
-A Tabela~\ref{tab:problema} apresenta-se informações do domínio de aplicação e as funcionalidades, serviços e restrições do sistema.  
+O MIDAS visa atender a interoperabilidade de serviços entre nuvens, onde tem por objetivo estabelecer uma comunicação transparente entre aplicações do tipo \textit{Software as a Service }(SaaS) e dados de quaisquer provedores de \textit{Data as a Service} (DaaS), de forma que as aplicações possam trabalhar com conjuntos de dados de serviços DaaS de qualquer fonte. A Tabela~\ref{tab:problema} apresenta-se informações do domínio da aplicação, o problema alvo e suas consequências, e uma proposta de solução.  
 
 \begin{table}[h]
 \centering
@@ -232,35 +151,46 @@ A Tabela~\ref{tab:problema} apresenta-se informações do domínio de aplicaçã
 \end{tabular*}
 \end{table}
 
+A Figura~\ref{fig:midasproblema} exemplifica o problema de acesso a dados em nuvens heterogêneas, onde a \textit{Aplicação A} acessa dados de diferentes nuvens. A Figura~\ref{fig:midasproposta} introduz o MIDAS, que converte a consulta da aplicação SaaS em uma consulta compatível com a nuvem DaaS de interesse, aumentando assim a interoperabilidade entre essas camadas [7].
 
+\begin{figure}[!htbp]
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{midasproblema}
+    \caption{Problema de nuvens heterogêneas}
+    \label{fig:midasproblema}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{midasproposta}
+    \caption{Introdução do MIDAS}
+    \label{fig:midasproposta}
+  \end{subfigure}
+  \caption{Diagrama de comunicação entre as camadas SaaS e DaaS}
+\end{figure}
 
+O  projeto MIDAS é conduzido pelo Departamento de Ciência da Computação da Universidade Federal da Bahia sob orientação da professora Daniela Claro e conta com a participação de alunos de doutorado, mestrado e graduação da universidade.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Análise de requisitos de software}
 \label{sec:analise}
 Os processos utilizados para realização da análise de requisitos do MIDAS são mostrados na Figura~\ref{fig:analisereq}. 
-O levantamento de requisitos foi feito por meio do estudo da documentação existente referente ao MIDAS~\cite{monovini2015,monotarcio2015,marinho2016midas,apresentacao2017} e de uma entrevista com desenvolvedores do MIDAS.
+O levantamento de requisitos foi feito por meio do estudo da documentação existente referente ao MIDAS [5][6][7][8] e de uma entrevista com desenvolvedores do MIDAS.
 Os requisitos e atributos de qualidade apresentados nesta seção foram validados pelos desenvolvedores e arquitetos de software da equipe MIDAS.  
 
 \begin{figure} [h!]
   \centering
-    \includegraphics[width=0.32\textwidth]{analisereq}
+    \includegraphics[width=0.3\textwidth]{analisereq}
   \caption{Processos da Análise de Requisitos de Software} 
   \label{fig:analisereq}
 \end{figure}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\textit{Stakeholders}}
 \label{subsec:stakeholders}
+Os stakeholders têm grande influência no design da arquitetura porque são eles que determinam
+os requisitos que o sistema deve atender.
 
 \begin{enumerate}
+
 \item \textbf{Usuário final}: o usuário final utiliza a aplicação da camada SaaS para acessar os dados da camada DaaS.
 \item 
 \textbf{Aplicação \textit{middleware} (MIDAS)}: o \textit{middleware} é responsável por garantir a interoperabilidade na comunicação entre aplicações no camada SaaS e dados na camada DaaS. A equipe do MIDAS pode ser vista na Tabela~\ref{tab:equipe}.
@@ -269,7 +199,7 @@ Os requisitos e atributos de qualidade apresentados nesta seção foram validado
 \caption{Equipe MIDAS} \label{tab:equipe}
 \begin{tabular*}{0.85\linewidth}{@{\extracolsep{\fill}}|r p{7cm}|} \hline
 \textbf{Desenvolvedores} & Edmilson Lima, Joevan Santos  \\ \hline
-\textbf{ Desenvolvedor de teste} & Marcelo Aires, Witã Rocha, Babacar Mane, Elivaldo Lozer.  \\\hline
+\textbf{Testadores} & Marcelo Aires, Witã Rocha, Babacar Mane, Elivaldo Lozer.  \\\hline
 \textbf{Arquiteto de software} &Babacar Mane, Marcelo Aires, Elivaldo Lozer, [alunos de MAT65]
   \\\hline
 \textbf{Analista de sistema} & Daniel Moreira, Juvenal Macedo
@@ -286,25 +216,15 @@ Os requisitos e atributos de qualidade apresentados nesta seção foram validado
 %\item \textbf{Banco de dados DaaS}: o banco de dados DaaS fornece os dados requisitados pelo \textit{middleware}. 
 \end{enumerate}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\subsection{Requisitos arquiteturais}
+\subsection{Especificação de requisitos}
 \label{subsec:ra}
-Neste seção, define-se os requisitos funcionais e não funcionais do MIDAS. O levantamento de requisitos e análise de requisitos foram realizados seguindo recomendações do padrão internacional ISO/IEC 12207~\cite{ISOIEC21207}.  
-%chrome-extension://ecnphlgnajanjnkcmbpancdjoidceilk/content/web/viewer.html?file=http%3A%2F%2Fdisi.unal.edu.co%2Fdacursci%2Fsistemasycomputacion%2Fdocs%2FSystemsEng%2FISO_IEC_12270_2008.pdf
+Neste seção, define-se os requisitos funcionais e não funcionais do MIDAS. O levantamento de requisitos e análise de requisitos foram realizados seguindo recomendações do padrão internacional ISO/IEC 12207 [4].  
 
-%O levantamento de requisitos foi realizado por meio de uma entrevista, onde os fornecedores de requisitos foram entrevistados pelos analistas de sistema. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\newpage
 \subsection*{Requisitos funcionais}
 
-A Tabela~\ref{tab:rf} apresenta os requisitos funcionais do MIDAS, que descrevem as diversas funções que clientes e usuários querem ou precisam que o software ofereça.
+A Tabela~\ref{tab:rf} apresenta os requisitos funcionais do MIDAS. Os requisitos funcionais descrevem as funcionalidades que devem ser providas pelo software, em atendimento a requisições de  clientes e usuários. Requisitos funcionais descrevem "o que" o sistema deve fazer. 
 
 \begin{table}[htb]
 \centering
@@ -315,167 +235,94 @@ A Tabela~\ref{tab:rf} apresenta os requisitos funcionais do MIDAS, que descrevem
 \textbf{RF02} 	& \textbf{Reconstruir consultas}\\ \cline{2-2}
  				& O MIDAS deve reconstruir a consulta decomposta de modo que ela seja compatível com as DaaSs alvo.   \\ \hline
 \textbf{RF03} 	& \textbf{Armazenar e gerenciar informações das DaaSs}\\ \cline{2-2}
- 				& O MIDAS deve armazenar e gerenciar informações relevantes das DaaSs (informação de conexão, estruturação da consulta, etc.) .  \\ \hline
+ 				& O MIDAS deve armazenar e gerenciar informações relevantes das DaaSs (informação de conexão, estruturação da consulta, etc.).  \\ \hline
  \textbf{RF04} 	& \textbf{Formatar, organizar e filtrar o resultado da consulta no DaaS}\\ \cline{2-2}
  				& O MIDAS deve filtrar dados irrelevantes para o SaaS, organizar os dados,  e ser capaz de retornar o resultado da consulta no formato JSON.  \\ \hline
 \end{tabular*}
 \end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\newpage
-\subsubsection*{Requisitos não funcionais}
-A Tabela~\ref{tab:rnf} mostra os requisitos não funcionais do MIDAS, onde é apresentado as qualidades globais que o MIDAS deve possuir. 
 
+%\newpage
+\subsubsection*{Requisitos não-funcionais}
+A Tabela~\ref{tab:rnf} exibe os requisitos não-funcionais do MIDAS. Requisitos não-funcionais descrevem propriedades, características ou restrições que o software deve atender na execução de suas funcionalidades, ou seja, definem "como" o sistema deve realizar essas funções.
 
 \begin{table}[htb]
 \centering
 \caption{Requisitos não funcionais} \label{tab:rnf}
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}|r p{13cm}|} \hline
-\textbf{RNF01} & \textbf{Licença}\\ \cline{2-2}
- & Livre  \\\hline
-\textbf{RNF02} & \textbf{Linguagem de programação}\\ \cline{2-2}
- & PHP  \\ \hline
-\textbf{RNF03} &\textbf{ Protocolo de comunicação SaaS}\\ \cline{2-2}
- & API REST  \\ \hline
- \textbf{RNF04} & \textbf{Protocolo de comunicação DaaS}\\ \cline{2-2}
- & API REST  \\ \hline
- \textbf{RNF05} & \textbf{Ferramentas (PaaS)}\\ \cline{2-2}
- & Apache 2.0, servidor PHP 5.6   \\ \hline
- \textbf{RNF06} & \textbf{Arquitetura multilocatário}\\ \cline{2-2}
- & A arquitetura de rede deve possibilitar acesso de múltiplas aplicações da camada SaaS.  \\ \hline
+\textbf{RNF01} & O MIDAS será disponibilizado através de licença pública. \\ \hline
+\textbf{RNF02} & A linguagem de programação será orientada a objetos e capaz de gerar conteúdo web dinâmico.\\ \hline
+\textbf{RNF03} &As camadas SaaS-\textit{middleware}-DaaS devem utilizar um protocolo de comunicação que suporte o estilo arquitetural REST. \\ \hline
+ \textbf{RNF04} & A arquitetura de rede deve possibilitar acesso de múltiplas aplicações da camada SaaS.  \\ \hline
+ \textbf{RNF05} & O MIDAS acessará múltiplos bancos de dados na camada DaaS.  \\ \hline
+      \textbf{RNF06} & O usuário final não deve perceber a introdução do \textit{middleware} no tempo de resposta de sua requisição.  \\ \hline
+  \textbf{RNF07} &     O \textit{middleware} deve garantir a interoperabilidade sintática.\\ \hline   
+  \textbf{RNF08} &     Os dados consultados pelo \textit{middleware} serão de domínio público.\\ \hline       
+
+
 \end{tabular*}
 \end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+
 \subsection{Atributos de qualidade}
 \label{subsec:aq}
-Na Tabela~\ref{tab:aqs} encontra-se os atributos de qualidade do MIDAS, que foram definidos seguindo as especificações do padrão internacional ISO/IEC 9126-1:2001 \cite{ISOIEC9126}.
+Na Tabela~\ref{tab:aqs} encontra-se os atributos de qualidade do MIDAS, definidos conforme as especificações do padrão internacional ISO/IEC 9126-1:2001 [3].
 
 \begin{table}[htb]
 \centering
 \caption{Atributos de qualidade internos e externos de software} \label{tab:aqs}
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}|r r p{12.5cm}|} \hline
 
-%%%%%%%%%%%%%%%%%%%%%%%
 & \multicolumn{2}{l|}{\textbf{Funcionalidade}}  \\ \cline{2-3}
 
 &\textbf{AQ01} & \textbf{\underline{Interoperabilidade} (Interno)}\\ 
-& & O \textit{middleware} deve ser capaz de comunicar simultaneamente com mais de um provedor de nuvem, independentemente das diferenças entre os provedores. Assim, o \textit{middleware} deve garantir a interoperabilidade sintática.  \\\cline{2-3}
+& & O \textit{middleware} deve ser capaz de comunicar simultaneamente com mais de um provedor de nuvem, independentemente das diferenças entre os provedores.  \\\cline{1-3}
 
-&\textbf{AQ02} & \textbf{\underline{Segurança} (Interno)}\\
-& & Os dados consultados pelo \textit{middleware} são de domínio público e não requerem criptografia.  \\ \cline{1-3}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%
  & \multicolumn{2}{l|}{\textbf{Usabilidade}} \\ \cline{2-3}
  
-&\textbf{AQ03} & \textbf{\underline{Operabilidade} (Externo)}\\
+&\textbf{AQ02} & \textbf{\underline{Operabilidade} (Externo)}\\
 & & As aplicações SaaS devem ser capazes de utilizar o \textit{middleware} para requerer informações do DaaS.  \\ \cline{1-3}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%
- & \multicolumn{2}{l|}{\textbf{Confiabilidade}} \\ \cline{2-3}
+& \multicolumn{2}{l|}{\textbf{Confiabilidade}} \\ \cline{2-3}
  
-&\textbf{AQ04} & \textbf{\underline{Disponibilidade} (Externo)}\\ 
+&\textbf{AQ03} & \textbf{\underline{Disponibilidade} (Externo)}\\ 
 & & O \textit{middleware} deve estar sempre disponível para atender as requisições das aplicações do SaaS.  \\ \hline
 
- 
-
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%% 
 & \multicolumn{2}{l|}{\textbf{Eficiência}} \\ \cline{2-3}
 
-&\textbf{AQ05} & \textbf{\underline{Desempenho} (Interno e externo)}\\ 
-& & Os usuários finais não devem perceber atrasos nas respostas devido a introdução do \textit{middleware}.\\&
-&\textbf{Monitoramento}: deve-se monitorar o tempo de resposta de cada requisição para garantir a invisibilidade do \textit{middleware} durante os testes.   \\ \hline
+&\textbf{AQ04} & \textbf{\underline{Desempenho} (Interno e externo)}\\ 
+& & Os usuários finais não devem perceber atrasos nas respostas devido a introdução do \textit{middleware}.  \\ \hline
 
-%%%%%%%%%%%%%%%%%%%%%%%
 & \multicolumn{2}{l|}{\textbf{Manutenibilidade}} \\ \cline{2-3}
 
-&\textbf{AQ06} & \textbf{\underline{Modificabilidade} (Interno)}\\ 
-& & Gerenciador de código\textbf{:} o código-fonte deve ser modificado com o auxílio de um software de controle de versões. Os desenvolvedores utilizaram \textit{branches} e o gerente de desenvolvimento deve aprovar as manutenções antes de subir a alteração ao repositório central. \\&
+&\textbf{AQ05} & \textbf{\underline{Modificabilidade} (Interno)}\\ 
+& &  \\&
 &\textbf{Acoplamento e Coesão}: o sistema deve possuir baixo acoplamento e alta coesão. O objetivo é diminuir propagação de erros e dependências. \\&
-&\textbf{Manutenção preditiva}: para cada alteração no código, deve ser previsto unidades que devem ser modificadas em conjunto.  \\ \cline{2-3}
+&\textbf{Manutenção preditiva}: para cada alteração no código, deve ser previsto unidades que devem ser modificadas em conjunto.  \\ \cline{1-3}
  
-&\textbf{AQ07} & \textbf{\underline{Testabilidade} (Interno)}\\ 
-& &  Toda e qualquer alteração deve passar testes manuais. \\\cline{1-3}
-
-%%%%%%%%%%%%%%%%%%%%%%
-& \multicolumn{2}{l|}{\textbf{Portabilidade}} \\ \cline{2-3}
-
-&\textbf{AQ08} & \textbf{\underline{Adaptabilidade} (Interno)}\\ 
-& &  O MIDAS deve ser capaz de comunicar-se com múltiplas aplicações da camada SaaS e diversas bases de dados da camada DaaS. \\\cline{1-3}
 
 \end{tabular*}
 \end{table}
 
-
-
-
-
-%\begin{table}[htb]
-%\centering
-%\caption{Atributos de qualidade de software} %\label{tab:aqs}
-%\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}|r p{13cm}|} \hline
-
-%\textbf{AQ01} & \textbf{Interoperabilidade}\\ \cline{2-2}
- %& O \textit{middleware} deve ser capaz de comunicar simultaneamente com mais de um provedor de nuvem, independentemente das diferenças entre os provedores. Assim, o \textit{middleware} deve garantir a interoperabilidade sintática.  \\\hline
-
-%\textbf{AQ02} & \textbf{Disponibilidade}\\ \cline{2-2}
-% & O \textit{middleware} deve estar sempre disponível para atender as requisições das aplicações do SaaS.  \\ \hline
- 
-%\textbf{AQ03} & \textbf{Desempenho}\\ \cline{2-2}
- %& Os usuários finais não devem perceber atrasos nas respostas devido a introdução do \textit{middleware}.\\&
-%\textbf{Monitoramento}: deve-se monitorar o tempo de resposta de cada requisição para garantir a invisibilidade do \textit{middleware} durante os testes.   \\ \hline
-
- %\textbf{AQ04} & \textbf{Modificabilidade}\\ \cline{2-2}
-% & Gerenciador de código: o código-fonte deve ser modificado com o auxílio de um software de controle de versões. Os desenvolvedores utilizaram \textit{branches} durante a etapa de manutenção e o gerente de desenvolvimento deve aprovar as manutenções antes de subir a alteração ao repositório central. \\&
-%\textbf{Testes}: toda e qualquer alteração deve passar testes manuais. \\&
-%\textbf{Acoplamento e Coesão}: o sistema deve possuir baixo acoplamento e alta coesão. O objetivo é diminuir propagação de erros e dependência entre unidades. \\&
-%\textbf{Manutenção preditiva}: para cada alteração no código, deve ser previsto unidades que devem ser modificadas em conjunto.  \\ \hline
-
-%\textbf{AQ05} & \textbf{Segurança}\\ \cline{2-2}
-% & Os dados consultados pelo \textit{middleware} são de domínio público e não requerem criptografia.  \\ \hline
-%\end{tabular*}
-%\end{table}
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Projeto de Arquitetura de Software}
 \label{sec:pas}
-
+Nessa seção encontra-se as decisões arquiteturais e os principais componentes e
+comunicações do MIDAS.
 \begin{figure} [h!]
   \centering
-    \includegraphics[width=0.32\textwidth]{projarquitect}
+    \includegraphics[width=0.3\textwidth]{projarquitect}
   \caption{Processos do Projeto de Arquitetura de Software} 
   \label{fig:projarquitect}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\textit{Decisões aquiteturais}}
 
 Uma escolha entre as alternativas de design arquitetural, com o objetivo de atender um ou mais atributos de qualidade do sistema, são chamadas de decisões arquiteturais. Dessa forma, as decisões arquiteturais do MIDAS são descritas a seguir.
 
-[Decisão Arquitetural 001] Mudança do uso de banco de dados para arquivo texto. Segundo os stakeholders a mudançã para arquivo texto faciliitou a comunicação e melhorou o desempenho do MIDAS.
+[Decisão Arquitetural 001] Mudança do uso de banco de dados para arquivo texto. Segundo os stakeholders a mudança para arquivo texto facilitou a comunicação e melhorou o desempenho do MIDAS.
 
-[Decisão Arquitetural 002] Mudança do framework CodeIgniter para o Laravel. Por possuir uma grande comunidade de usuarios o grupo optou pela troca.
-\textbf{ISSO ATENDE QUAL ATRIBUTO DE QUALIDADE?}
+[Decisão Arquitetural 002] Mudança do framework CodeIgniter para o Laravel. Por possuir uma grande comunidade de usuários o grupo optou pela troca.
 
 [Decisão Arquitetural 003] Mudança da plataforma de serviço para o Heroku, pelo motivo de o openshift provedor anterior, ter limitação na quantidade de colaboradores / desenvolvevores para trabalharem em um mesmo projeto. 
-
-
 
 \subsection{\textit{Module View}}
 \label{subsec:mv}
@@ -495,7 +342,6 @@ Para representar o MIDAS, foram utilizados o \textit{Decomposition Style}, o \te
 
 O \textit{Decomposition Style} é usado para dividir o sistema em unidades de implementação. Descreve a organização do código como módulos e sub-módulos e mostra como as responsabilidades do sistema são particionadas entre eles. Logo, na Figura ~\ref{decomposicao} é possível visualizar esse estilo do MIDAS.
 
-
 \begin{figure} [h!]
   \centering
     \includegraphics[width=0.7\textwidth]{MIDAS_-_Estilo_Decomposicao}
@@ -505,31 +351,29 @@ O \textit{Decomposition Style} é usado para dividir o sistema em unidades de im
 
 \textbf{Módulo \textit{Controller}}
 
-Responsável por receber do SAAS as requisições de consultas. Uma requisição de consulta contém informações que indicam o DAAS a ser acessado e os parâmetros da consulta (base de dados, ordenação, limite de registros recuperados, etc). 
+O módulo \textit{Controller} é responsável por receber do SAAS as requisições de consultas. Uma requisição de consulta contém informações que indicam o DAAS a ser acessado e os parâmetros da consulta (base de dados, ordenação, limite de registros recuperados, etc). 
 
-Aciona o \textit{Query Decomposer} para a decomposição da requisição de consulta. Aciona o \textit{Query Builder} para a montagem da consulta a ser enviada ao DAAS. 
+Este módulo aciona o \textit{Query Decomposer} para a decomposição da requisição de consulta. Aciona o \textit{Query Builder} para a montagem da consulta a ser enviada ao DAAS. 
 
-Executa uma consulta ao DAAS, recebe e encaminha o resultado da consulta para o \textit{Result Formatter}.
+Finalmente, o \textit{Controller} executa uma consulta ao DAAS, recebe e encaminha o resultado da consulta para o \textit{Result Formatter}.
 
 \textbf{Módulo \textit{Query Decomposer}}
 
-Trata as requisições de consulta recebidas do \textit{Controller}, decompondo seus elementos (SELECT, FROM, WHERE, ORDER BY, LIMIT, etc.) e devolvendo a consulta decomposta. O \textit{Query Decomposer} é implementado como uma classe PHP.
+O módulo \textit{Query Decomposer} trata as requisições de consulta recebidas do \textit{Controller}, decompondo seus elementos (SELECT, FROM, WHERE, ORDER BY, LIMIT, etc.) e devolvendo a consulta decomposta. 
 
 \textbf{Módulo \textit{Query Builder}}
 
-Recebe do \textit{Controller} a consulta decomposta por elementos e prepara uma consulta no formato aceito pelo DAAS de destino, de acordo com suas 
-especificações de API REST - armazenadas no DIS. Devolve a consulta preparada ao \textit{Controller}. O \textit{Query Builder} é uma classe PHP.
+O módulo \textit{Query Builder} recebe do \textit{Controller} a consulta decomposta por elementos e prepara uma consulta no formato aceito pelo DAAS de destino, de acordo com suas 
+especificações de API REST - armazenadas no DIS. Devolve a consulta preparada ao \textit{Controller}. 
 
 \textbf{Módulo \textit{Model}}
 
-Responsável por acessar as informações armazenadas no DIS (\textit{Dataset Information Storage}). O DIS guarda em arquivo texto informações relevantes de cada DAAS, como URL de conexão e informações de acesso à respectiva API REST. 
+O módulo \textit{Model} é responsável por acessar as informações armazenadas no DIS (\textit{Dataset Information Storage}). O DIS guarda em arquivo texto informações relevantes de cada DAAS, como URL de conexão e informações de acesso à respectiva API REST. 
 
 \textbf{Módulo \textit{Result Formatter}}
 
-Classe PHP que recebe o resultado da consulta ao DAAS, juntamente com os parâmetros da requisição de consulta, através do \textit{Controller}. Pode receber os dados em formato JSON, CSV ou XML, a depender da API REST do DAAS. 
+O módulo \textit{Result Formatter} recebe o resultado da consulta ao DAAS, juntamente com os parâmetros da requisição de consulta, através do \textit{Controller}. Pode receber os dados em formato JSON, CSV ou XML, a depender da API REST do DAAS. 
 Filtra as informações e as organiza, de acordo com os parâmetros da requisição de consulta. Retorna ao \textit{Controller} os dados em formato JSON. 
-
-
 
 \subsubsection{\textit{Data Model Style}}
 
@@ -544,14 +388,12 @@ O \textit{Data Model Style} descreve a estrutura da informação estática em te
 
 No MIDAS, conforme visto na Figura ~\ref{registro} os parâmetros que viabilizam o acesso ao DAAS ficam armazenados no DIS. O DIS é um arquivo texto e o seu conteúdo está no formato JSON. Optou-se pelo armazenamento em arquivo texto devido à simplicidade da estrutura e ao número reduzido de registros. 
 
-
 \begin{figure} [h!]
   \centering
     \includegraphics[width=0.7\textwidth]{DIS-exemplo}
   \caption{Exemplo de registro no DIS}
   \label{registro}
 \end{figure}
-
 
 \textbf{Atributos do DIS:}
 
@@ -565,8 +407,6 @@ No MIDAS, conforme visto na Figura ~\ref{registro} os parâmetros que viabilizam
 \item \textbf{fields param: } nome do parâmetro de retorno para identificar os campos retornados pelo DAAS
 \item \textbf{format param: } formato do resultado da consulta ao DAAS
 \end{itemize}
-
-
 
 \subsubsection{\textit{Uses Style}}
 
@@ -583,59 +423,51 @@ Na \textit{Uses Style} representada na Figura ~\ref{uses}, o módulo \textit{Con
 
 O \textit{Controller} é quem inicia as comunicações com os outros módulos, recebendo uma resposta para as suas requisições. A única exceção é o SAAS, que é quem inicia a comunicação, sendo que o SAAS e o DAAS são módulos externos ao MIDAS. 
 
-
 \subsubsection{\textit{Layered Style}}
 
-Este estilo põe junto as camadas (agrupamento de módulos que oferecem um cojunto coesivo de serviços) em uma relação unidirecional "permitido para uso" entre as camadas.
+Este estilo põe junto as camadas (agrupamento de módulos que oferecem um cojunto coesivo de serviços) em uma relação unidirecional tipo "permitido para uso" entre as camadas.
 
 Na figura ~\ref{camadas}, observa-se o SAAS, que é a camada externa ao MIDAS que inicia a comunicação. 
 
 \begin{figure} [h!]
   \centering
     \includegraphics[width=0.8\textwidth]{MIDAS_-_Estilo_Camada}
-  \caption{MIDAS - Estilo Camadas}
+  \caption{MIDAS - \textit{Layered Style}}
   \label{camadas}
 \end{figure}
 
-O tratamento da requisição do SAAS é feito pelo módulo \textit{Controller}, que é o responsável por orquestrar a comunicação interna do MIDAS, assim como, a comunicação com outros sistemas (SAAS e DAAS). Por isto, o módulo \textit{Controller} está representado como uma única camada isolada das demais. 
+As camadas do MIDAS ilustradas na figura ~\ref{camadas} estão representadas separadamente como uma forma de melhorar o entendimento da solução, mas não há uma separação física de camadas na implementação. Inclusive o retângulo com borda pontilhada ao redor das camadas do MIDAS foi utilizado no intuito de destacar o MIDAS, como um todo em suas camadas, em relação às camadas externas e ele.
 
-Os módulos \textit{Query Decomposer}, \textit{Query Builder}, \textit{Model} e \textit{Result Formater} formam uma outra camada do MIDAS. Estes módulos e não se comunicam diretamente. Todos eles são acionados pelo \textit{Controller} e somente respondem a este módulo após receberem uma requisição. 
+O tratamento da requisição do SAAS é feito pelo módulo \textit{Controller}, que é o responsável por orquestrar a comunicação interna do MIDAS, assim como, a comunicação com outros sistemas (SAAS e DAAS). Por isto, o módulo \textit{Controller} está representado como uma única "camada" isolada das demais. 
 
-O \textit{Controller} é o único módulo do sistema que se comunica com o DAAS. 
+Os módulos \textit{Query Decomposer}, \textit{Query Builder}, \textit{Model} e \textit{Result Formater} formam uma outra "camada" do MIDAS. 
+
+Estes módulos e não se comunicam diretamente. Todos eles são acionados pelo \textit{Controller} e somente respondem a este módulo após receberem uma requisição. O \textit{Controller} é o único módulo do sistema que se comunica com o DAAS. 
 
 Este modelo proporciona um baixo acoplamento e uma alta coesão - isto é um direcionador do projeto MIDAS, visando uma maior facilidade de manutenção. 
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
-\subsection{Componente e conectores (C\&C)}
+\subsection{\textit{Component-and-Connector View} (C\&C)}
 \label{subsec:cc}
-Analisando o MIDAS sob a ótica da visão arquitetural de Componentes e Conectores, os módulos existentes correspondem a componentes. O estilo Cliente-Servidor foi utilizado para representar essa visão, conforme diagrama a seguir.
-
-A descrição dos módulos e suas respectivas responsabilidades foram detalhados  anteriormente na visão de Módulo.
+Analisando o MIDAS sob a ótica da visão arquitetural de \textit{Component-and-Connector}, os módulos existentes correspondem a componentes, exceto o módulo Model que foi encapsulado aqui no componente DIS (\textit{Data Information System}). A descrição dos módulos e suas respectivas responsabilidades foram detalhados  anteriormente na view de Módule. Lá é possível observar na própria descrição do módulo \textit{Controller} em 4.2.1, que ele se mostra como um cliente de todos os outros módulos. Diante disso, resolvemos escolher o \textit{Client-Server Style} para melhor representar essa visão, conforme diagrama a seguir. 
 
 \begin{figure} [h!]
   \centering
-    \includegraphics[width=0.8\textwidth]{MIDAS_-_Estilo_Cliente_Servidor}
+    \includegraphics[width=1.0\textwidth]{MIDAS_-_Estilo_Cliente_Servidor}
   \caption{MIDAS - Estilo Cliente Servidor}
   \label{cliente}
 \end{figure}
 
-A diagramação utilizada na Figura ~\ref{cliente} obedece ao disposto na UML 2.0 com a adaptação de conectores feita em Clements Et Al \cite{clements2002documenting}, que não utiliza a montagem/assemby para representar os conectores e sim uma associação direta entre as portas.
+A diagramação utilizada na Figura ~\ref{cliente} obedece ao disposto na UML 2.0 com a adaptação de conectores feita em Clements Et Al [1], que não utiliza a montagem/assemby para representar os conectores e sim uma associação direta entre as portas.
 
-No diagrama é possivel notar que existe um \textit{Controller} principal que é o que faz a conexão com todos os outros componentes do MIDAS. Nenhum componente acesso o outro diretamente que não seja através deste \textit{Controller}. O \textit{Controller} sempre chama os componentes mediante uma requisição de serviço, obtendo a resposta em seguida. Sendo assim, podemos considerar o \textit{Controller} como cliente de todos os outros componentes do MIDAS e todos os outros componentes como servidor do \textit{Controller}, utilizando o \textit{Component-and-Connector Style denominado  Client-Server} Clements Et Al \cite{clements2002documenting} para tal fim.
+No diagrama é possivel notar que existe um \textit{Controller} principal que é o que faz a conexão com todos os outros componentes do MIDAS. Nenhum componente acesso o outro diretamente que não seja através deste \textit{Controller}. O \textit{Controller} sempre chama os componentes mediante uma requisição de serviço, obtendo a resposta em seguida. Sendo assim, podemos considerar o \textit{Controller} como cliente de todos os outros componentes do MIDAS e todos os outros componentes como servidor do \textit{Controller}, utilizando o \textit{Component-and-Connector Style denominado  Client-Server} Clements Et Al [1] para tal fim.
 
-Os conectores possuem os papéis request e reply, para requisitar solicitações e responder solicitações, respectivamente. A porta \textit{client} está anexada ao papel request e a porta server está anexada ao papel \textit{reply} para os componentes dispostos, obedecendo ao definido por Clements Et Al \cite{clements2002documenting}.
+Os conectores possuem os papéis request e reply, para requisitar solicitações e responder solicitações, respectivamente. A porta \textit{client} está anexada ao papel request e a porta server está anexada ao papel \textit{reply} para os componentes dispostos, obedecendo ao definido por Clements Et Al [1].
 
 O \textit{Controller}, além das portas clientes em relação aos outros componentes, ainda possui mais duas portas: uma para receber requisições SOA do SAAS e outra para comunicação com o DAAS, ambos através de conectores REST.
 
-
 \newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\textit{Allocation View}}\label{sec:aloc}
 \label{subsec:av}
 São representados na visão de alocação o \textit{Deployment Style} e o  \textit{Work Assignment Style}. O \textit{Implementation Style} não pôde ser documentado porque o acesso ao código-fonte não foi autorizado.
@@ -689,8 +521,6 @@ ClearDB
 \end{tabular*}
 \end{table}
 
-
-
 A Plataforma HEROKU funciona executando aplicativos do cliente em contêineres virtuais que rodam em um ambiente de tempo de execução confiável. Quando o cliente necessita de uma máquina com PHP, que é o que ocorre com o MIDAS, o Heroku "imediatamente" a fornece, sendo indiferente para o cliente, qual será o SO do servidor com PHP.
 
 Dessa forma, pelo fato de o MIDAS ser uma nuvem para aplicações, projetado para ser independente de infraestrutura, não cabe nesse projeto requisitar uma infraestrutura em específico. Se fosse determinado, por exemplo, que todo usuário deste middleware usasse o Windows com a justificativa de que o MIDAS foi feito pensando apenas neste SO, isso geraria um problema de lock-in para todos os usuários de MAC e Linux em uma solução que tenta justamente resolver esse problema.
@@ -712,28 +542,31 @@ O objetivo deste estilo é descrever o mapeamento das pessoas que compõem a equ
 \end{table}
 
 \newpage
+\section{Bibliografia}
 
-%----------------------------------------------------------------------
-\addcontentsline{toc}{section}{Refer\^{e}ncias} % Para incluir no sumário
-\bibliographystyle{abbrv} %Mudar depois para abntex
-\bibliography{references} % Nome do arquivo Bibtex (*.bib)
+%clements2002
+[1]  Clements, Paul et al., Documenting software architectures views and beyond, Pearson Education, 1, 2002.
 
+%germoglio2010arquitetura
+[2] GERMOGLIO, Guilherme, Arquitetura de software, Texas, Rice University, 2010.
 
-%----------------------------------------------------------------------
-\appendix % a partir daqui todas as seções são tratadas como apendices
-\newpage
-\section{Um Ap\^{e}ndice}
+%ISOIEC9126
+[3]  ISOIEC, ISOIEC 9126. Software engineering. Product quality, ISOIEC, 2001.
 
-Put your data here.
+%ISOIEC21207
+[4]  ISOIEC, ISOIEC 21207. Systems and software engineering. Software life cycle processes, ISOIEC, 2008.
 
-\subsection{Subseção}
-Subseção.
+%monovini2015
+[5]  Cidreira, Vinicius, MIDAS: Um middleware para prover interoperabilidade entre DaaS e SaaS, Universidade Federal da Bahia, 2015.
 
+%monotarcio2015
+[6]  Machado, Tarcio, MIDAS: Um middleware para interoperar aplicações SaaS e provedores de DaaS, Universidade Federal da Bahia, 2015.
 
+%marinho2016midas
+[7]  Marinho, Tarcio and Cidreira, Vinicius and Claro, Daniela B. and Mane, Babacar, MIDAS: A Middleware to Provide Interoperability Between SaaS and DaaS,
+  Brazilian Computer Society, 2016.
 
-
-%------------------------------------------------------------------------- 
+%apresentacao2017
+[8]  Lozes, Elivaldo, MIDAS: Past and Present, 2017.
 
 \end{document}
-
- 
